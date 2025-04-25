@@ -1,0 +1,32 @@
+# Dual authentication mode configuration
+auth:
+  # Enable dual authentication mode (both Keycloak and JWT)
+  dual-mode: true
+  
+  # Public endpoints that don't require authentication
+  public:
+    endpoints:
+      - /auth/login
+      - /auth/refresh
+      - /auth/providers/enabled
+      - /auth/providers/*/authorize
+      - /auth/providers/*/callback
+
+# JWT configuration
+jwt:
+  # Secret key for signing JWT tokens (should be at least 256 bits)
+  # In production, this should be set via environment variables or a secure configuration store
+  secret: ${JWT_SECRET:5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437}
+  # Token expiration time in milliseconds (default: 24 hours)
+  expiration: ${JWT_EXPIRATION:86400000}
+  # Refresh token expiration time in milliseconds (default: 7 days)
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+
+# Keycloak migration configuration
+keycloak:
+  url: ${KEYCLOAK_URL:https://auth.termx.org}
+  realm: ${KEYCLOAK_REALM:termx}
+  client-id: ${KEYCLOAK_CLIENT_ID:admin-cli}
+  client-secret: ${KEYCLOAK_CLIENT_SECRET:}
+  admin-username: ${KEYCLOAK_ADMIN_USERNAME:admin}
+  admin-password: ${KEYCLOAK_ADMIN_PASSWORD:}

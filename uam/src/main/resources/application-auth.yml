@@ -1,0 +1,18 @@
+jwt:
+  # Secret key for signing JWT tokens (should be at least 256 bits)
+  # In production, this should be set via environment variables or a secure configuration store
+  secret: ${JWT_SECRET:5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437}
+  # Token expiration time in milliseconds (default: 24 hours)
+  expiration: ${JWT_EXPIRATION:86400000}
+  # Refresh token expiration time in milliseconds (default: 7 days)
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+
+# Public endpoints that don't require authentication
+auth:
+  public:
+    endpoints:
+      - /auth/login
+      - /auth/refresh
+      - /auth/providers/enabled
+      - /auth/providers/*/authorize
+      - /auth/providers/*/callback

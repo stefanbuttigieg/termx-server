@@ -7,4 +7,6 @@
     <include file="uam-schema.xml" relativeToChangelogFile="true"/>
 
     <include file="privilege/changelog.xml" relativeToChangelogFile="true"/>
+
+    <include file="user/changelog.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="01-user.sql" relativeToChangelogFile="true"/>
+    <include file="02-external_identity.sql" relativeToChangelogFile="true"/>
+    <include file="03-auth_provider.sql" relativeToChangelogFile="true"/>
+    <include file="04-user_role.sql" relativeToChangelogFile="true"/>
+    <include file="05-user_privilege.sql" relativeToChangelogFile="true"/>
+    <include file="06-refresh_token.sql" relativeToChangelogFile="true"/>
+    <include file="07-default_admin.sql" relativeToChangelogFile="true"/>
+</databaseChangeLog>
